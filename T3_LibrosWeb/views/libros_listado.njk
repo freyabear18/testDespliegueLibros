@@ -1,0 +1,20 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Libros | Listado{% endblock %}
+{% block contenido %}
+    <h1>Listado de libros</h1>
+    <ul>
+        {% for libro in libros %}
+            {% if loop.index % 2 == 0 %}
+                <li class="par">
+            {% else %}
+                <li class="impar">
+            {% endif %}
+            {{ libro.nombre }}
+            <button class="btn btn-success">
+            </li>
+        {% else %}
+            <li>No hay libros que mostrar.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
